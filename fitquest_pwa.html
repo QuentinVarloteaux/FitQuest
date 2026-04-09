@@ -109,13 +109,13 @@ body{font-family:'Share Tech Mono',monospace;color:var(--text);display:flex;flex
 .eq-slot:active{transform:scale(.93);}
 .eq-slot.common{border-style:solid;border-color:#3a3a6a;}.eq-slot.rare{border-style:solid;border-color:var(--purple);}
 .eq-slot.epic{border-style:solid;border-color:var(--orange);}.eq-slot.legendary{border-style:solid;border-color:var(--gold);box-shadow:0 0 8px rgba(245,200,66,.2);}
-.eq-ic{font-size:22px;}.eq-nm{font-size:10px;color:var(--muted);}.eq-bn{font-size:10px;color:var(--green);}
+.eq-ic{width:52px;height:36px;display:flex;align-items:center;justify-content:center;}.eq-ic img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 1px 3px rgba(0,0,0,.8));}.eq-ic.eq-empty{font-size:22px;opacity:.25;}.eq-nm{font-size:10px;color:var(--muted);}.eq-bn{font-size:10px;color:var(--green);}
 .inv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
 .iv{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:7px 4px;text-align:center;cursor:pointer;transition:transform .1s;}
 .iv:active{transform:scale(.9);}
 .iv.common{border-color:#3a3a6a;}.iv.rare{border-color:var(--purple);}.iv.epic{border-color:var(--orange);}
 .iv.legendary{border-color:var(--gold);box-shadow:0 0 6px rgba(245,200,66,.2);}
-.iv-ic{font-size:24px;}.iv-nm{font-size:10px;color:var(--muted);margin-top:2px;line-height:1.2;}.iv-bn{font-size:11px;color:var(--green);margin-top:1px;}
+.iv-ic{width:100%;height:42px;display:flex;align-items:center;justify-content:center;}.iv-ic img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 1px 3px rgba(0,0,0,.8));}.iv-nm{font-size:10px;color:var(--muted);margin-top:2px;line-height:1.2;}.iv-bn{font-size:11px;color:var(--green);margin-top:1px;}
 /* QUESTS */
 .quest-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:8px;}
 .q-nm{font-family:'Press Start 2P',monospace;font-size:11px;color:var(--gold);margin-bottom:4px;}
@@ -170,13 +170,13 @@ body{font-family:'Share Tech Mono',monospace;color:var(--text);display:flex;flex
 .roulette-vp{overflow:hidden;border:1px solid var(--border2);border-radius:8px;background:rgba(0,0,0,.5);}
 .roulette-track{display:flex;gap:6px;padding:6px;will-change:transform;}
 .ri{flex-shrink:0;width:84px;height:84px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);}
-.ri .ri-ic{font-size:32px;line-height:1;}.ri .ri-nm{font-size:10px;color:var(--muted);text-align:center;line-height:1.2;padding:0 3px;}
+.ri .ri-ic{width:72px;height:46px;display:flex;align-items:center;justify-content:center;}.ri .ri-ic img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 1px 3px rgba(0,0,0,.8));}.ri .ri-nm{font-size:9px;color:var(--muted);text-align:center;line-height:1.2;padding:0 3px;}
 .ri.common{border-color:#3a3a6a;}.ri.rare{border-color:var(--purple);}.ri.epic{border-color:var(--orange);}
 .ri.legendary{border-color:var(--gold);box-shadow:0 0 10px rgba(245,200,66,.3);}
 .co-result{display:none;text-align:center;animation:revPop .5s cubic-bezier(.22,1,.36,1);}
 @keyframes revPop{from{transform:scale(.4) rotate(-10deg);opacity:0;}to{transform:scale(1) rotate(0);opacity:1;}}
 .co-result.show{display:block;}
-.co-res-icon{font-size:70px;margin-bottom:8px;}
+.co-res-icon{height:140px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;}.co-res-icon img{max-width:80%;max-height:100%;object-fit:contain;filter:drop-shadow(0 3px 10px rgba(0,0,0,.8));}
 .co-res-name{font-family:'Press Start 2P',monospace;font-size:14px;margin-bottom:4px;}
 .co-res-rarity{font-size:12px;color:var(--muted);margin-bottom:4px;letter-spacing:2px;}
 .co-res-desc{font-size:14px;color:var(--green);margin-bottom:18px;}
@@ -191,7 +191,7 @@ body{font-family:'Share Tech Mono',monospace;color:var(--text);display:flex;flex
 .popup{background:var(--panel);border:1px solid var(--border2);border-radius:16px;padding:24px 20px;text-align:center;width:100%;max-width:300px;animation:popIn .3s cubic-bezier(.22,1,.36,1);}
 @keyframes popIn{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
 .pop-t{font-family:'Press Start 2P',monospace;font-size:14px;color:var(--gold);margin-bottom:10px;}
-.pop-i{font-size:36px;margin-bottom:6px;}.pop-d{font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6;white-space:pre-wrap;}
+.pop-i{font-size:36px;margin-bottom:6px;min-height:48px;display:flex;align-items:center;justify-content:center;}.pop-img{max-width:150px;max-height:110px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.8));}.pop-d{font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6;white-space:pre-wrap;}
 .pop-btn{background:var(--gold);color:#000;border:none;border-radius:8px;padding:12px 28px;font-family:'Press Start 2P',monospace;font-size:12px;cursor:pointer;width:100%;}
 /* FLOATS */
 .fxp{position:fixed;font-family:'Press Start 2P',monospace;font-size:14px;color:var(--gold);pointer-events:none;z-index:9999;text-shadow:0 0 10px rgba(245,200,66,.5);animation:fup 1s ease-out forwards;}
@@ -443,50 +443,95 @@ const LEVELS=[
   {l:5,n:'Champion',xp:900,col:'#ff9f43'},{l:6,n:'Maître',xp:1500,col:'#c39aff'},
   {l:7,n:'Seigneur',xp:2300,col:'#ff4757'},{l:8,n:'Immortel',xp:3500,col:'#f5c842'},
 ];
-const CASE_TYPES={
-  bronze:{id:'bronze',name:'Caisse Recrue',icon:'📦',cls:'bronze',pool:[
-    {id:'b1',n:'Wraps | Cuir',icon:'🧤',r:'common',slot:'hands',bonus:{str:2},desc:'+2 Force'},
-    {id:'b2',n:'Ground Rebel',icon:'👤',r:'common',slot:'head',bonus:{end:1},desc:'+1 End'},
-    {id:'b3',n:'Capsule Sticker',icon:'🎟',r:'common',slot:'consumable',bonus:{xp:30},desc:'+30 XP'},
-    {id:'b4',n:'Patch | Easy Peasy',icon:'🏷',r:'common',slot:'chest',bonus:{end:2},desc:'+2 End'},
-    {id:'b5',n:'Moto | Spearmint',icon:'🧤',r:'rare',slot:'hands',bonus:{str:6},desc:'+6 Force'},
-    {id:'b6',n:'Capsule Holo',icon:'🎟',r:'rare',slot:'consumable',bonus:{xp:80},desc:'+80 XP'},
-    {id:'b7',n:'Special Agent Ava',icon:'👤',r:'rare',slot:'head',bonus:{str:3,end:3},desc:'+3/+3'},
-  ],w:[28,28,22,22,12,8,8]},
-  silver:{id:'silver',name:'Caisse Chroma',icon:'🪙',cls:'silver',pool:[
-    {id:'s1',n:'Special Agent Ava',icon:'👤',r:'rare',slot:'head',bonus:{str:3,end:3},desc:'+3/+3'},
-    {id:'s2',n:'Flip | Forest DDPAT',icon:'🔪',r:'rare',slot:'belt',bonus:{end:5,xpB:.1},desc:'+5 End +10% XP'},
-    {id:'s3',n:'Capsule Chroma',icon:'🎟',r:'rare',slot:'consumable',bonus:{xp:80},desc:'+80 XP'},
-    {id:'s4',n:'Sport | Hedge Maze',icon:'🧤',r:'epic',slot:'hands',bonus:{str:12,xpB:.15},desc:'+12 Str +15% XP'},
-    {id:'s5',n:'AK-47 | Redline',icon:'🔫',r:'epic',slot:'weapon',bonus:{str:8,end:8},desc:'+8/+8'},
-    {id:'s6',n:'Sticker Holo Rare',icon:'🎟',r:'epic',slot:'consumable',bonus:{xp:150,str:5},desc:'+150 XP +5 Str'},
-    {id:'s7',n:'AWP | Dragon Lore',icon:'🔫',r:'legendary',slot:'weapon',bonus:{str:20,end:15,xpB:.25},desc:'+20/+15 +25% XP'},
-  ],w:[22,22,18,16,12,8,2]},
-  gold:{id:'gold',name:'Caisse Prisma',icon:'🎁',cls:'gold-c',pool:[
-    {id:'g1',n:'Sport | Hedge Maze',icon:'🧤',r:'epic',slot:'hands',bonus:{str:12,xpB:.15},desc:'+12 Str +15% XP'},
-    {id:'g2',n:'AK-47 | Neon Rider',icon:'🔫',r:'epic',slot:'weapon',bonus:{str:8,end:8},desc:'+8/+8'},
-    {id:'g3',n:'Sticker Foil Prisma',icon:'🎟',r:'epic',slot:'consumable',bonus:{xp:150,str:5},desc:'+150 XP +5 Str'},
-    {id:'g4',n:'AWP | Dragon Lore',icon:'🔫',r:'legendary',slot:'weapon',bonus:{str:20,end:15,xpB:.25},desc:'+20/+15 +25% XP'},
-    {id:'g5',n:'Sir Bloody Darryl',icon:'👤',r:'legendary',slot:'head',bonus:{str:10,end:10,xpB:.2},desc:'+10/+10 +20% XP'},
-    {id:'g6',n:'Patch | Howling Dawn',icon:'🏷',r:'legendary',slot:'chest',bonus:{str:15,end:12,xpB:.2},desc:'+15/+12 +20% XP'},
-    {id:'g7',n:'Karambit | Fade',icon:'🔪',r:'legendary',slot:'belt',bonus:{str:12,end:12,xpB:.3},desc:'+12/+12 +30% XP'},
-  ],w:[28,28,20,10,8,4,2]},
-  diamond:{id:'diamond',name:'Caisse Dreams',icon:'💎',cls:'diamond',pool:[
-    {id:'d1',n:'AWP | Dragon Lore',icon:'🔫',r:'legendary',slot:'weapon',bonus:{str:20,end:15,xpB:.25},desc:'+20/+15 +25% XP'},
-    {id:'d2',n:'Sir Bloody Darryl',icon:'👤',r:'legendary',slot:'head',bonus:{str:10,end:10,xpB:.2},desc:'+10/+10 +20% XP'},
-    {id:'d3',n:'Patch | Howling Dawn',icon:'🏷',r:'legendary',slot:'chest',bonus:{str:15,end:12,xpB:.2},desc:'+15/+12 +20% XP'},
-    {id:'d4',n:'Karambit | Fade',icon:'🔪',r:'legendary',slot:'belt',bonus:{str:12,end:12,xpB:.3},desc:'+12/+12 +30% XP'},
-    {id:'d5',n:'M4A4 | Howl',icon:'🔫',r:'legendary',slot:'weapon',bonus:{str:25,end:10,xpB:.25},desc:'+25/+10 +25% XP'},
-    {id:'d6',n:'Sticker Or Foil',icon:'🎟',r:'legendary',slot:'consumable',bonus:{xp:400,str:15},desc:'+400 XP +15 Str'},
-  ],w:[20,20,18,18,14,10]},
-  daily:{id:'daily',name:'Caisse Opération',icon:'🔥',cls:'daily-c',pool:[
-    {id:'dq1',n:'Capsule Opération',icon:'🎟',r:'rare',slot:'consumable',bonus:{xp:120},desc:'+120 XP'},
-    {id:'dq2',n:'Wraps | CAUTION!',icon:'🧤',r:'rare',slot:'hands',bonus:{str:8},desc:'+8 Force'},
-    {id:'dq3',n:'Sticker Op Holo',icon:'🎟',r:'epic',slot:'consumable',bonus:{xp:200,end:5},desc:'+200 XP +5 End'},
-    {id:'dq4',n:'Specialist | Crimson Kimono',icon:'🧤',r:'epic',slot:'hands',bonus:{str:10,end:10},desc:'+10/+10'},
-    {id:'dq5',n:'Sticker Légendaire',icon:'🎟',r:'legendary',slot:'consumable',bonus:{xp:300,str:10,end:10},desc:'+300 XP +10/+10'},
-  ],w:[25,25,20,18,12]},
+const SI=h=>"https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGI"+h+"/360fx360f";
+const SKINS={
+  ground_rebel:{n:'Ground Rebel',r:'common',slot:'head',b:{end:4},d:'+4 End',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oZrl-DZk-fO8YaVjNPfdVmHAxOgj4uNtGyqxxRki52jSyoqseHiRalRyWcdzE-APuxK8xNbmYvSiuVLQnSKAnQ'},
+  mac10_fade:{n:'MAC-10 | Fade',r:'common',slot:'weapon',b:{str:3,end:3},d:'+3/+3',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8n5WxrR1a7s2oaaBoH_yaCW-Ej-h347AwHyzqx04l4WvSyI77cCjCbQEhW8MjE-NcthG8loXlMujh7g3Ay9USCa6Cs30'},
+  mp7_fade:{n:'MP7 | Fade',r:'common',slot:'weapon',b:{str:3,end:3},d:'+3/+3',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8jsHf_CNk6fOqbZtgMKesAm6Xyfo45LQ7Fy3rzR536j6HyYn6J3zFaAcjA5RwQ-9fs0O5m93nMe2x5QHfjZUFk3sMNd5yQw'},
+  ump45_fade:{n:'UMP-45 | Fade',r:'common',slot:'weapon',b:{str:3,end:3},d:'+3/+3',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLkk4a0qB1a7s2oaaBoH-WeHlicyOl-pK8_HHzmzU52sTjWntegc32faAR2DMEkELMI4xmxw4G1Yrnn4FCM3d4Q02yg2U-vv27j'},
+  glock_fade:{n:'Glock-18 | Fade',r:'common',slot:'weapon',b:{str:4,end:2},d:'+4/+2',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL2kpnj9h1a7s2oaaBoH_yaCW-Ej-8u5bZvHnq1w0Vz62TUzNj4eCiVblMmXMAkROJeskLpkdXjMrzksVTAy9US8PY25So'},
+  p2000_amber:{n:'P2000 | Amber Fade',r:'common',slot:'weapon',b:{str:3,end:3},d:'+3/+3',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL5lYayrXIL0POvV6JsJPWsA2KEwOJ6ueJWQyC0nQlpsjvcmd_7dHyVZgdxAsB1QeRZ5BPqlYbmNuvr5lTW2o1Myyyt3ykY7DErvbib25P3aA'},
+  galil_amber:{n:'Galil AR | Amber Fade',r:'common',slot:'weapon',b:{str:4,end:3},d:'+4/+3',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL2n5rp8SNJ0POvV6JsJPWsA2KEwOJ6ueJWQyC0nQlp52uGm9yodC3GZ1d0CMdyQeJctRDqmtayY-Kz71fW2IIUziz8intK6TErvbiZh4dEMQ'},
+  mac10_amber:{n:'MAC-10 | Amber Fade',r:'common',slot:'weapon',b:{str:3,end:3},d:'+3/+3',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8n5WxrR1a7s2oaaBoH_2WGmaczed1j-1gSCGn20QlsWqAz4z8d3yfP1IpW8QkQeIN5hXtldTkMuqzsQyNjNgUxX6vjCpXrnE8FVzqUc8'},
+  sawedoff_amber:{n:'Sawed-Off | Amber Fade',r:'common',slot:'weapon',b:{str:3,end:2},d:'+3/+2',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLin4Hl-S1d6c2vaZtrIfSWMWqV1e96vOhqcCW6khUz_TuHwt2odHKROA90WZN2Fu4DsEO-mtTlNLiws1SNi99NxHmtj3tI5n11o7FVJSB89LY'},
+  r8_amber:{n:'R8 Revolver | Amber Fade',r:'common',slot:'weapon',b:{str:4,end:2},d:'+4/+2',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLjm4Dv8TRe_c2vaZtrIfSWMWqV1e96vOhqcDu2gxIrpTiXpYPwJiPTcAIpDJckF-9cuhfqltDuZujgs1DZj4hDy338jnhM73xusOcKVaos-qPJz1aW9R0yRq8'},
+  ssg08_acid:{n:'SSG 08 | Acid Fade',r:'common',slot:'weapon',b:{str:4,end:4},d:'+4/+4',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLijZGwpR1a7s2oaaBoH_eBD3SDze94tN5lRi67gVN05G3QzI6pIn2UOAYhDJMjEeANsBbtlYC2ZbvltA2P2I5FyHmq2Hka8G81tCngBDgW'},
+  m4a4_zebra:{n:'M4A4 | Faded Zebra',r:'common',slot:'weapon',b:{str:3,end:3},d:'+3/+3',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwjFL0OirarZsI_GeMWWH_uJ_t-l9AXu3zBkhsDyHz4z9dXmVagJzW8MiQbFetBfrkNHhZbjr51CMiN8TyS_gznQeEoYBjXk'},
+  aug_amber:{n:'AUG | Amber Fade',r:'common',slot:'weapon',b:{str:4,end:4},d:'+4/+4',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwi5Hf_CNk6fOqbZtgJeSSAmuZwtF6ueZhW2fizUlwsmuEytmvJHzGaQJyXMclEbYCuhPtkdHmPrvqsVaL3osTmyj6kGoXuZFFysy6'},
+  ak_redline:{n:'AK-47 | Redline',r:'rare',slot:'weapon',b:{str:7,end:5},d:'+7/+5',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0POlPPNSI_-RHGavzedxuPUnFniykEtzsWWBzoyuIiifaAchDZUjTOZe4RC_w4buM-6z7wzbgokUyzK-0H08hRGDMA'},
+  awp_redline:{n:'AWP | Redline',r:'rare',slot:'weapon',b:{str:7,end:5},d:'+7/+5',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk7uW-V6diIuKSMWuZxuZi_rUxHS3lzUwm5DjWy976dSiRagd1WJB1RLQP4RK-mtazM-3itQeL2INbjXKpw2eVIZ0'},
+  m4a1s_fade:{n:'M4A1-S | Fade',r:'rare',slot:'weapon',b:{str:7,end:5},d:'+7/+5',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwjFS4_ega6F_H_GSMWGRxetJvbVoHjqMmRQguynLm92pci2WagEkC5Z5Q7VetkbukIXjNrnm5QPbjt8WxS-vii4b5i5v4fFCD_TfxF4xWg'},
+  awp_fade:{n:'AWP | Fade',r:'rare',slot:'weapon',b:{str:8,end:6},d:'+8/+6',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_CNk7uW-V6JsJPWsAm6Xyfo45-c5GXDnwB534DuEwtuoIHOfaAYiAsYjF-QItUaxmoC0MO_h5ALcjJUFk3sEzfdk4w'},
+  ak_vulcan:{n:'AK-47 | Vulcan',r:'rare',slot:'weapon',b:{str:8,end:6},d:'+8/+6',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0POlPPNSMuWRDGKC_uJ_t-l9AXCxxEh14zjTztivci2ePQZ2W8NzTecD4BKwloLiYeqxtAOIj9gUyyngznQeF7I6QE8'},
+  glock_neonoir:{n:'Glock-18 | Neo-Noir',r:'rare',slot:'weapon',b:{str:6,end:6},d:'+6/+6',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL2kpnj9h1Y-s2pZKtuK8-dAW6C_uJ_t-l9AXznwh9zsjjSn9j9dH-eb1V0CsF3QrNZ4xW8ltPlM-7h4QbYit5NzyzgznQecekkTuo'},
+  ump45_neonoir:{n:'UMP-45 | Neo-Noir',r:'rare',slot:'weapon',b:{str:6,end:6},d:'+6/+6',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLkk4a0qB1O4uL6PZtjJf-sAGiZ09F6ueZhW2flw0R0sGrcy4z9cn6XagVxCpR4F7Rb5BPplIbjY7vj4AOLjt0TzSj9kGoXuYU0ZhpI'},
+  mac10_rider:{n:'MAC-10 | Neon Rider',r:'rare',slot:'weapon',b:{str:6,end:6},d:'+6/+6',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8n5WxrR1Y-s2jaac8cM-dC2ie0-dytfNWQyC0nQlp5DzTntmgdC7COABxX5NxQrUOtUS5w4LgMu6zsVCK2IJCmyisjitM6DErvbicsEA0SQ'},
+  p250_asiimov:{n:'P250 | Asiimov',r:'rare',slot:'weapon',b:{str:6,end:5},d:'+6/+5',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLhzMOwwiFO0OL8PfRSIeOaB2qf19F6ueZhW2fixx53tWqEm4ugeXuebQN0CZJyRrMJuxm4loCyPr_i51TfjtgXzi79kGoXuUXmUJzm'},
+  usps_neonoir:{n:'USP-S | Neo-Noir',r:'rare',slot:'weapon',b:{str:6,end:5},d:'+6/+5',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLkjYbf7itX6vytbbZSI-WsG3SA0tF4v-h7cCW6khUz_WXdmd-vI3uRPwEkApR4QuBcu0Xrk4biYr_mtQXdidlCz3r63Ska7Hx1o7FVWuokIcU'},
+  buckshot:{n:'Buckshot SEAL',r:'rare',slot:'head',b:{str:5,end:5},d:'+5/+5',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fh7lk6nz6XRk-fO8YaVjNPrdXWLElL5ytbBsTXrqzUxzsWmHzN-gI3-TbwQmC5pzQLELsUbrx9bmP_SiuVJe8Pfo4Q'},
+  arno:{n:'Arno',r:'rare',slot:'head',b:{str:6,end:4},d:'+6/+4',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oZz18yVX6s28aa1pJeKsGGaCyO94pOInTSrkwRlx6z7Xwtn9In6eZwQnDsd5TOYDsxi9xNe2N7-0slHe2NlDmzK-0H38E8rQtQ'},
+  operator:{n:'Operator SWAT',r:'rare',slot:'head',b:{str:5,end:6},d:'+5/+6',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fh7lk6nm_ytk-fO8YaVjNPbdCjfAkbcl5LM6S3jkxUsj42TQzdf7JH_Caw5zDMMlEOAIt0Hqk9bmY_SiuVKnm4HYYQ'},
+  primeiro:{n:'Primeiro Tenente',r:'rare',slot:'head',b:{str:5,end:5},d:'+5/+5',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fh7lk6nz6XRk-fO8YaVjNP7dV2bFlesvtbM_Sn7gx010tTncmdn7ICqePQ4mWMB5EeALtRS7w4XuP_SiuVLSDPMGxQ'},
+  dragomir:{n:'Dragomir',r:'rare',slot:'head',b:{str:6,end:5},d:'+6/+5',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oZTh8Sla4c24abZkIf6HAimWlb9w57hoGHrmlB9_4j-Gm439d3rCPAEiDZNwQrUD40K9m9GzNu-0-UWA3CLCQ0Kd'},
+  rezan:{n:'Rezan The Ready',r:'rare',slot:'head',b:{str:5,end:6},d:'+5/+6',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oZTh8Sla4c24abZkIf6HCSnCk79w47BqGSvjxEt3tjuDmYyocy2UbgRzXJIiEeULsRXqmtCxYrm2-UWA3FAo97Sl'},
+  ricksaw:{n:'Cmdr. Ricksaw',r:'rare',slot:'head',b:{str:6,end:5},d:'+6/+5',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fh7lk6nz6XRk-fO8YaVjNPndVz-Ul74hsbNoHi21kUly6mrQzNagcijBPQEnCsciTOdY4Rm6m4XvN_SiuVLIl2LQXw'},
+  ak_asiimov:{n:'AK-47 | Asiimov',r:'epic',slot:'weapon',b:{str:11,end:8,xpB:.1},d:'+11/+8 +10% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0POlPPNSIeOaB2qf19F6ueZhW2e2wEt-t2jcytf6dymSO1JxA5oiRecLsRa5kIfkYr-241aLgotHz3-rkGoXuUp8oX57'},
+  awp_asiimov:{n:'AWP | Asiimov',r:'epic',slot:'weapon',b:{str:12,end:8,xpB:.1},d:'+12/+8 +10% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk7uW-V6V-Kf2cGFidxOp_pewnF3nhxEt0sGnSzN76dH3GOg9xC8FyEORftRe-x9PuYurq71bW3d8UnjK-0H0YSTpMGQ'},
+  m4a4_asiimov:{n:'M4A4 | Asiimov',r:'epic',slot:'weapon',b:{str:11,end:8,xpB:.1},d:'+11/+8 +10% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwiFO0P_6V6V-Kf2cGFidxOp_pewnTii3w0x_tmTRnt2qdHyWaFAjA5UlQOYI5BO5k9bhZunm41OI34NDnjK-0H3pAWw_Rw'},
+  m4a4_neonoir:{n:'M4A4 | Neo-Noir',r:'epic',slot:'weapon',b:{str:11,end:9,xpB:.1},d:'+11/+9 +10% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwiFO0P_6afBSLvWcMWmfyPxJvOhuRz39wE1142vSztmvInvBOgV0W5R1FLYNuxW4wIbgNrmx4g2Kj4tMmCX93zQJsHgJr0dqFw'},
+  awp_neonoir:{n:'AWP | Neo-Noir',r:'epic',slot:'weapon',b:{str:12,end:8,xpB:.1},d:'+12/+8 +10% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk7uW-V6poL_6cB3WvzedxuPUnHirrxR4l423SyI39I3KXPwdxWZclQeNZ5EXskYfnNeyw71OMi9lNzDK-0H3r66pOTw'},
+  awp_hyperbeast:{n:'AWP | Hyper Beast',r:'epic',slot:'weapon',b:{str:12,end:9,xpB:.12},d:'+12/+9 +12% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk7uW-V6x0MPWBMWWVwP1ij-1gSCGn20pxtm_WzNuoeHKeaFAnCZUiTe5bt0HqxofmZOrm5Q2IjoMQzS_5iShXrnE8NzWs__c'},
+  m4a1s_hyperbeast:{n:'M4A1-S | Hyper Beast',r:'epic',slot:'weapon',b:{str:11,end:9,xpB:.12},d:'+11/+9 +12% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwjFS4_ega6F_H_OGMWrEwL9JuPh5SjuMlxgmoCm6lob-KT-JbwF1WZEjR-YJskK9k9XiYePltAeNjYlAxSn5j34dvCZstb4LB6Ut-7qX0V8Xkv5_2A'},
+  ak_rider:{n:'AK-47 | Neon Rider',r:'epic',slot:'weapon',b:{str:13,end:8,xpB:.12},d:'+13/+8 +12% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0POlV6poL_6sHG6UxPxJvOhuRz39xkQhsTnVzoygdy7Ea1UoCZQkRe9bs0brl9TvN-m0tVHYjY5CyS35jjQJsHhk4o5zcA'},
+  nova_hyperbeast:{n:'Nova | Hyper Beast',r:'epic',slot:'weapon',b:{str:9,end:10,xpB:.1},d:'+9/+10 +10% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL_kYDhwiFO0PyhfqVSKOmDC3WSxO9lpN5lRi67gVMhsGrTmd2seH6XbA4pDZR1EbMCtES8m4fiNenl4FDcid1Az32ri3tM8G81tMCTwFwB'},
+  p90_asiimov:{n:'P90 | Asiimov',r:'epic',slot:'weapon',b:{str:10,end:9,xpB:.1},d:'+10/+9 +10% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLhx8bf_jdk_6v-JaV-KfmeAXGvzedxuPUnTSjikRgksjuBzoz4dXLFb1QoC8QlTLQD4EPqk4LvN-Pns1aMioNBzTK-0H3gQVv65g'},
+  ava:{n:'Special Agent Ava',r:'epic',slot:'head',b:{str:9,end:8,xpB:.12},d:'+9/+8 +12% XP',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fh7lk6nm_ytk-fO8YaVjNPLdXz6TkLdw5LY4Hnmwl0wktj7dn4r9I3OWPFApC5F1QeAO5xi4lIDiM_SiuVKk3V4ZcQ'},
+  syfers:{n:'Michael Syfers',r:'epic',slot:'head',b:{str:10,end:7,xpB:.1},d:'+10/+7 +10% XP',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fh7lk6nm_ytk-fO8YaVjNPjdXjWRkegi57FoHyrglkh-62ndz4yrIimfOFRxCZQmQeQOsEK9wNfnYvSiuVJ9Bmql3Q'},
+  shahmat:{n:'Prof. Shahmat',r:'epic',slot:'head',b:{str:8,end:9,xpB:.1},d:'+8/+9 +10% XP',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oZrl-DZk-fO8YaVjNPndCDCTk74k4LA5GX_mxR4mtWSDmYz9cy6ROAQoCMB1E-AK5BG9wNziNPSiuVKTaodKjw'},
+  awp_dragon:{n:'AWP | Dragon Lore',r:'legendary',slot:'weapon',b:{str:25,end:18,xpB:.3},d:'+25/+18 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk4veqYaF7IfysCnWRxuF4j-B-Xxa_nBovp3Pdwtj9cC_GaAd0DZdwQu9fuhS4kNy0NePntVTbjYpCyyT_3CgY5i9j_a9cBkcCWUKV'},
+  m4a4_howl:{n:'M4A4 | Howl',r:'legendary',slot:'weapon',b:{str:25,end:15,xpB:.3},d:'+25/+15 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwiFO0P_6afVSKP-EAm6extF6ueZhW2exwkl2tmTXwt39eCiUPQR2DMN4TOVetUK8xoLgM-K341eM2otDnC6okGoXufBz_TAB'},
+  awp_medusa:{n:'AWP | Medusa',r:'legendary',slot:'weapon',b:{str:23,end:17,xpB:.3},d:'+23/+17 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk4veqfbdsH_GEHlicyOl-pK85TC23wk12tWSGnNr6JXqRPVUnA5J5RLIKshS-l4HuYbji7lfajdgU02yg2bOcOBD3'},
+  awp_print:{n:'AWP | Printstream',r:'legendary',slot:'weapon',b:{str:22,end:16,xpB:.28},d:'+22/+16 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_DVL0OK8Yap5M-SBC2ad_uJ_t-l9AX_qlk4k5GyAzo6ocC-QZgZxX8AjEbZY5xnrxtPjM7vnsgGIj9oTmXngznQeg3pfcPs'},
+  m4a1s_print:{n:'M4A1-S | Printstream',r:'legendary',slot:'weapon',b:{str:21,end:16,xpB:.28},d:'+21/+16 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwjFS4_ega6F_H_OGMWrEwL9lj_F7Rienhgk1tjyIpYPwJiPTcAAoCpsiEO5ZsUbpm9C2Zuni4VHW3o5EzSX62HxP7Sg96-hWVqYi_6TJz1aW0nxrkGs'},
+  usps_print:{n:'USP-S | Printstream',r:'legendary',slot:'weapon',b:{str:20,end:15,xpB:.25},d:'+20/+15 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLkjYbf7itX6vytbbZSI-WsG3SA_v5kue99XD2hkBwqjDGMnYftb3yUPFR0XsNyRrNc5kO5ltziMenr5lONj4kXyi2riywc7y9o5LtQAqQ7uvqAkScWnv4'},
+  deagle_print:{n:'Desert Eagle | Printstream',r:'legendary',slot:'weapon',b:{str:21,end:14,xpB:.25},d:'+21/+14 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL1m5fn8Sdk7OeRbKFsJ8-DHG6e1f1iouRoQha_nBovp3OGmdeqInyVP1V0XsYlRbEI50a5wNyzZr605AyI3t5MmCSohylAuC89_a9cBoMY9UkV'},
+  ak_fireserpent:{n:'AK-47 | Fire Serpent',r:'legendary',slot:'weapon',b:{str:23,end:15,xpB:.28},d:'+23/+15 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0PSneqF-JeKDC2mE_u995LZWTTuygxIYvzSCkpu3cnvFPQB2DpUkROFY4Rntw93lP7i241DbiI1BxSuviHlKunk_6-sHU71lpPMTRLyP4Q'},
+  ak_lotus:{n:'AK-47 | Wild Lotus',r:'legendary',slot:'weapon',b:{str:24,end:16,xpB:.28},d:'+24/+16 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0POlV61-LPGdCliWzeFkse1WQyC0nQlpsDuGyt-pdnyRPA4hDcYkR-QPuhi-wdPuYbyx5AaMidkQnC_-2ilIuzErvbi4ijV5Mw'},
+  doctor:{n:'\'The Doctor\' Romanov',r:'legendary',slot:'head',b:{str:14,end:14,xpB:.25},d:'+14/+14 +25% XP',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oZTh8Sla4c24abZkIf6HBinGlu0k4bU7Givnk01352yByd_6IHLGZgElDpchEbNZtxewx9zhNr_m-UWA3HK9C48i'},
+  bloody_darryl:{n:'Sir Bloody Darryl',r:'legendary',slot:'head',b:{str:15,end:13,xpB:.25},d:'+15/+13 +25% XP',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oYby8iRe_OGnZ6psLM-FD3WWkqAg6ec5THznk05-4jvXntz7JHjBOwYkDZAhQrZfskXuw9HiN-m3tAfclcsbmmRuIYiQ'},
+  number_k:{n:'Number K',r:'legendary',slot:'head',b:{str:14,end:14,xpB:.25},d:'+14/+14 +25% XP',h:'a-2lmxU-LR0dnuNm6E8Vl45Iv181z1fgn8oYby8iRe_OGnZ6psLM-FD3WZj7wuseM-GnG2lh4h5m2EmderdX7DaA9zW8N2QuBbtBG-mty2N-i0tADAy9USaSI87As'},
+  karambit_fade:{n:'Karambit | Fade',r:'legendary',slot:'belt',b:{str:18,end:15,xpB:.3},d:'+18/+15 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1Q7uCvZaZkNM-SD1iWwOpzj-1gSCGn20tztm_UyIn_JHKUbgYlWMcmQ-ZcskSwldS0MOnntAfd3YlMzH35jntXrnE8SOGRGG8'},
+  karambit_marble:{n:'Karambit | Marble Fade',r:'legendary',slot:'belt',b:{str:18,end:15,xpB:.3},d:'+18/+15 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1Q7uCvZaZkNM-SA1idwPx0vORWSSi3kCIrujqNjsGveH2RaVRxX5ohEe4Juhawm4fiM-ji4APf2YMXmSz_hyoduytv4uhWT-N7rfLHGBJ4'},
+  butterfly_fade:{n:'Butterfly Knife | Fade',r:'legendary',slot:'belt',b:{str:17,end:14,xpB:.28},d:'+17/+14 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1Z-ua6bbZrLOmsD2avx-9ytd5lRi67gVNwsDvSwtqqc3iXZg4kCZYjReYLtRbum9XgYuvm5wbWjtgUzCn3iSsf8G81tFEeH9rw'},
+  butterfly_marble:{n:'Butterfly Knife | Marble Fade',r:'legendary',slot:'belt',b:{str:17,end:14,xpB:.28},d:'+17/+14 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1Z-ua6bbZrLOmsD2qvzO9ksu1scC-ykRgYvzSCkpu3JCrBPVMkCZIiFLUC40S-l9DkZerg4Qfc3Y9DzCuo3SlK6ydv5e9UA71lpPNwsjHPzA'},
+  bayonet_fade:{n:'Bayonet | Fade',r:'legendary',slot:'belt',b:{str:16,end:14,xpB:.25},d:'+16/+14 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLzn4_v8ydP0POvV6JsJPWsAm6Xyfo45-BrHniwzUh24jjVm4qgInnCOA4mDscmEeVcsBXtkN22P-yx5waNg5UFk3tAoG85FQ'},
+  m9_fade:{n:'M9 Bayonet | Fade',r:'legendary',slot:'belt',b:{str:17,end:13,xpB:.25},d:'+17/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1Wts2sab1iLvWHMWaR_uh3tORWQyC0nQlp4znQytr6cnjFbg8oC8BzRrQK50S-lNDgP-_r5wWP3t5CyX37jCIb7DErvbiJu9Hv_g'},
+  flip_marble:{n:'Flip Knife | Marble Fade',r:'legendary',slot:'belt',b:{str:15,end:13,xpB:.25},d:'+15/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1d4_u-V6VgH_2SHGWcxNFwseVscCW6khUz_WqBnt2qIyrBPwMoCcN1R7YCtRa7kofhY7nk4gzajNhEzyT43HhK6CZ1o7FVaZCrJoQ'},
+  talon_fade:{n:'Talon Knife | Fade',r:'legendary',slot:'belt',b:{str:16,end:13,xpB:.25},d:'+16/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1M5vahf6lsK_WBMWaR_uh3tORWQyC0nQlpsmXcnNaoeHuTZwUiWMZzRrVZsxm9x9ThNrzj4QCPjdhNmHj73S9KujErvbhX2ACGeQ'},
+  stiletto_marble:{n:'Stiletto Knife | Marble Fade',r:'legendary',slot:'belt',b:{str:15,end:13,xpB:.25},d:'+15/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1I-_uibbB5L8-SA1idwPx0vORWSSi3kCIrujqNjsGgI3mSbgIoA8N3TeICtBC-kYG0Nenl4QPYjIJHmX6qingY5yZut-cHT-N7rRs0KjZk'},
+  ursus_fade:{n:'Ursus Knife | Fade',r:'legendary',slot:'belt',b:{str:15,end:13,xpB:.25},d:'+15/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL6kJ_m-B1O_eG7e5tsIc-VD2OV_uJ_t-l9AXzml00i527XzouseH7GblAjX5N3R-NbuhLswYfjY-zj7laKjdkRyX_gznQeK-1-7hY'},
+  sport_hedge:{n:'Sport Gloves | Hedge Maze',r:'legendary',slot:'hands',b:{str:18,end:13,xpB:.3},d:'+18/+13 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Tk5UvzWCL2kpn2-DFk_OKherB0H_eBC2Ke_uJ_t-l9AX21whwi4Gndnov9JH_FblMlCJYjRbFZtkWww4HnNbjr7wWN39gUmH7gznQeohQBtY8'},
+  sport_vice:{n:'Sport Gloves | Vice',r:'legendary',slot:'hands',b:{str:18,end:13,xpB:.3},d:'+18/+13 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Tk5UvzWCL2kpn2-DFk_OKherB0H_KfG2Kv0ed4u95lRi67gVNx4T-Bw434IHyVb1QlAsd1FOUDthG4xNznMu3m4QXXg90Wzn_33C1I8G81tLaDi_rK'},
+  sport_pandora:{n:'Sport Gloves | Pandora\'s Box',r:'legendary',slot:'hands',b:{str:19,end:13,xpB:.3},d:'+19/+13 +30% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Tk5UvzWCL2kpn2-DFk_OKherB0H-CGHHecxNF6ueZhW2exk01w4j7cmYn4eHPCbAMhApdwTOIN5BPsx9yyYu605FTeid0Uy3j3kGoXueKyz5wo'},
+  spec_crimson:{n:'Specialist Gloves | Crimson Kimono',r:'legendary',slot:'hands',b:{str:17,end:14,xpB:.28},d:'+17/+14 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Tk71ruQBH4jYLf-i5U-fe9V7d9JfOaD2uZ0vpJu-hkQCe8qhkusjCKlIvqHjnCOml8U8UoAfkItBLswdbuNbjr5FHdjNkUzSv73C1K5y46tu4EUvAg-6bU3FrBMOE4_9BdcyhkRns5'},
+  spec_emerald:{n:'Specialist Gloves | Emerald Web',r:'legendary',slot:'hands',b:{str:16,end:14,xpB:.25},d:'+16/+14 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Tk71ruQBH4jYLf-i5U-fe9V7d9JfOaD2uZ0vpJtexsXSi_kSIwtj-6lob-KT-Jbw4kA8d4QOBb5hnqmoHuMLmx4AWK341Bnyr93CxN6itjsb1XUfAgqLqX0V92--w69A'},
+  moto_spearmint:{n:'Moto Gloves | Spearmint',r:'legendary',slot:'hands',b:{str:15,end:14,xpB:.25},d:'+15/+14 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu4r7_lb1QgTykpPf-i5U-fe9V6liNP-BDX6TzetJvehnWxanhxQmvTqJn7D1KCzPKhgnW5UmRO4DsxXrlYbhPurmtAXai98UzS73in5I6S5p4OsAU_Zx-KHWkUifZsxBQgc2'},
+  moto_coolmint:{n:'Moto Gloves | Cool Mint',r:'legendary',slot:'hands',b:{str:15,end:14,xpB:.25},d:'+15/+14 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu4r7_lb1QgTykpPf-i5U-fe9V6liNP-BDX6TzetJpPNgTie0mRgYsTGQn7D1KCzPKhgiXMZwRuNe5xS5wYLvY-K3s1GN344Wz3ioiypK6X1p4e1WUKZ0q6WCkUifZln3nIr8'},
+  driver_king:{n:'Driver Gloves | King Snake',r:'legendary',slot:'hands',b:{str:16,end:13,xpB:.25},d:'+16/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5T441rsfhr9kYDl7h1I4_utY5t-LvGYC3SbyOBJp-lgWyyMmRQguynLz4r6Iy7EbFchApNyR-dbtEbuw4XkN7jq7gHdjtoQzi37hiwYvytvt_FCD_Ql24JgJg'},
+  wraps_caution:{n:'Hand Wraps | CAUTION!',r:'legendary',slot:'hands',b:{str:15,end:13,xpB:.25},d:'+15/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu4vx603vRA_Olpfu-TVJ7uK9V6xsLvSEHGaA_uJzsfVhSjuqqh4mpimMlYHGLSLANkI-CcBxQeIMtEHsl4CyNOjm4QDa3dgTniWvjnhJ7Hk54bsEV_Ak-KWE3BaBb-Pt8HWajg'},
+  wraps_slaughter:{n:'Hand Wraps | Slaughter',r:'legendary',slot:'hands',b:{str:15,end:13,xpB:.25},d:'+15/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu4vx603vRA_Olpfu-TVJ7uK9V6xsLvSEHGaA_vxztN56QyimkhUzti-6lob-KT-Jb1UjX5t0ROIN5xW9l9e2ZOmw5QWLi41Fmy6r3Sgb7C1o5etUBfcgqbqX0V-0bsdMFQ'},
+  bloodhound_charred:{n:'Bloodhound Gloves | Charred',r:'legendary',slot:'hands',b:{str:16,end:13,xpB:.25},d:'+16/+13 +25% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Tg_13jRBnOnJrv8iZT4OegbJtqLP-FC3Svw-J5v-VhQDy9kSIlvzyGkbDqKCfRO0RPVssnHaMUsES-k9HjNrixsgbd3YIRni7-inlO5i5t6-pRAqIs_aOFjg_JZbU5sI5Deqh-Veq-pA'},
+  hydra_case:{n:'Hydra Gloves | Case Hardened',r:'legendary',slot:'hands',b:{str:16,end:14,xpB:.28},d:'+16/+14 +28% XP',h:'Gz3UqlXOLrxM-vMGmW8VNxu5Tg_13jRBnOlo_k7yNk6P6hfqF-H_KfAWiUyeFjvuVWRzC3hxwYsDyWn7DxIDnDO1h1Xv0sHLBS9g7ul9zmMbi35FHYgolMmSj9jS8fvC5jte9RAqctqKCC2QHBYrU64MMCOr_5GlPhveuZ'},
 };
+const _it=id=>{const s=SKINS[id];return{id,n:s.n,r:s.r,slot:s.slot,bonus:s.b,desc:s.d,h:s.h};};
+const CASE_TYPES={
+  bronze:{id:"bronze",name:"Caisse Recrue",icon:"📦",cls:"bronze",pool:['mp7_fade','ump45_fade','glock_fade','mac10_fade','ak_redline','buckshot','arno','operator','p90_asiimov','ava','ak_fireserpent','bayonet_fade'].map(_it),w:[40,40,40,40,8,8,8,8,3,3,1,1]},
+  silver:{id:"silver",name:"Caisse Chroma",icon:"🪙",cls:"silver",pool:['p2000_amber','galil_amber','mac10_amber','sawedoff_amber','ak_vulcan','m4a1s_fade','primeiro','dragomir','m4a4_neonoir','syfers','m4a4_howl','doctor'].map(_it),w:[40,40,40,40,8,8,8,8,3,3,1,1]},
+  gold:{id:"gold",name:"Caisse Prisma",icon:"🎁",cls:"gold-c",pool:['r8_amber','ssg08_acid','m4a4_zebra','ground_rebel','awp_fade','glock_neonoir','rezan','ricksaw','ak_asiimov','shahmat','awp_dragon','sport_hedge'].map(_it),w:[40,40,40,40,8,8,8,8,3,3,1,1]},
+  diamond:{id:"diamond",name:"Caisse Dreams",icon:"💎",cls:"diamond",pool:['aug_amber','mp7_fade','ssg08_acid','r8_amber','ump45_neonoir','mac10_rider','usps_neonoir','awp_redline','m4a4_asiimov','awp_hyperbeast','awp_medusa','karambit_fade'].map(_it),w:[40,40,40,40,8,8,8,8,3,3,1,1]},
+  daily:{id:"daily",name:"Caisse Opération",icon:"🔥",cls:"daily-c",pool:['glock_fade','sawedoff_amber','galil_amber','m4a4_zebra','p250_asiimov','ak_vulcan','rezan','dragomir','m4a1s_hyperbeast','ak_rider','m4a1s_print','sport_vice'].map(_it),w:[40,40,40,40,8,8,8,8,3,3,1,1]},
+};
+
 const BOSSES=[
   {n:"L'Apathie",icon:'😴',hp:200},{n:'La Flemme',icon:'🛋',hp:400},
   {n:'Le Garde-Manger',icon:'🍔',hp:700},{n:"L'Ancien Toi",icon:'👹',hp:1100},{n:'Le Désespoir',icon:'💀',hp:1800},
@@ -502,9 +547,9 @@ const SEASON_TIERS=[
   {xp:95,reward:'🎁',type:'gold'},{xp:100,reward:'💎',type:'diamond'},
 ];
 const PRESTIGE_ITEMS=[
-  {id:'p1',n:'The Global Elite',icon:'👤',r:'legendary',slot:'head',bonus:{str:15,end:15,xpB:.35},desc:'+15/+15 +35% XP'},
-  {id:'p2',n:'Patch | Death Sentence',icon:'🏷',r:'legendary',slot:'chest',bonus:{str:20,end:20,xpB:.4},desc:'+20/+20 +40% XP'},
-  {id:'p3',n:'StatTrak™ AWP | Medusa',icon:'🔫',r:'legendary',slot:'weapon',bonus:{str:30,end:25,xpB:.5},desc:'+30/+25 +50% XP'},
+  {..._it('number_k'),bonus:{str:15,end:15,xpB:.35},desc:'+15/+15 +35% XP'},
+  {..._it('butterfly_marble'),bonus:{str:20,end:18,xpB:.4},desc:'+20/+18 +40% XP'},
+  {..._it('awp_print'),bonus:{str:30,end:25,xpB:.5},desc:'+30/+25 +50% XP'},
 ];
 const QUESTS=[
   {id:'q1',n:'Premier Pas',d:'Faire 1 série',stat:'totalExo',t:1,r:50,done:false},
@@ -553,7 +598,7 @@ function dayNum(){return Math.floor(Date.now()/86400000);}
 function fresh(){
   return{xp:0,str:10,end:10,fatigue:0,sessions:0,streak:0,lastDay:null,setsToday:{},
     cases:{bronze:0,silver:0,gold:0,diamond:0,daily:0},
-    inventory:[],equipped:{head:null,chest:null,hands:null,belt:null,weapon:null},
+    inventory:[],equipped:{head:null,hands:null,belt:null,weapon:null},
     quests:JSON.parse(JSON.stringify(QUESTS)),
     achs:JSON.parse(JSON.stringify(ACHS)).map(a=>({...a,unlocked:false})),
     boss:{hp:BOSSES[0].hp,maxHp:BOSSES[0].hp,idx:0,week:weekNum(),dead:false},
@@ -582,6 +627,10 @@ function loadG(){
     if(!d.weekHistory)d.weekHistory=[{week:weekNum(),xp:d.xp,str:d.str,end:d.end,sess:d.sessions}];
     if(!d.quests||d.quests.length<QUESTS.length)d.quests=JSON.parse(JSON.stringify(QUESTS));
     if(d.boss&&d.boss.week!==weekNum()&&!d.boss.dead){const ni=Math.min(BOSSES.length-1,(d.boss.idx||0)+1);d.boss={hp:BOSSES[ni].hp,maxHp:BOSSES[ni].hp,idx:ni,week:weekNum(),dead:false};}
+    // migrate legacy items without Steam CDN hashes + drop chest slot
+    if(Array.isArray(d.inventory))d.inventory=d.inventory.filter(i=>i&&i.h);
+    if(d.equipped){delete d.equipped.chest;for(const k of ['head','hands','belt','weapon']){if(d.equipped[k]&&!d.equipped[k].h)d.equipped[k]=null;if(d.equipped[k]===undefined)d.equipped[k]=null;}}
+    else d.equipped={head:null,hands:null,belt:null,weapon:null};
     return d;
   }catch(e){return fresh();}
 }
@@ -598,6 +647,8 @@ function log(msg,cls=''){const el=document.getElementById('logArea');const d=doc
 function floatXP(n,el){const r=el?.getBoundingClientRect();const f=document.createElement('div');f.className='fxp';f.style.cssText=`left:${r?r.left+r.width/2:180}px;top:${r?r.top:200}px;`;f.textContent='+'+n+' XP';document.body.appendChild(f);setTimeout(()=>f.remove(),1050);}
 function floatCase(icon,el){const r=el?.getBoundingClientRect();const f=document.createElement('div');f.className='fcs';f.style.cssText=`left:${r?r.left+r.width/2-16:160}px;top:${r?r.top:200}px;`;f.textContent=icon;document.body.appendChild(f);setTimeout(()=>f.remove(),950);}
 function showPop(title,item,desc,col='var(--gold)'){document.getElementById('popT').textContent=title;document.getElementById('popT').style.color=col;document.getElementById('popI').textContent=item;document.getElementById('popD').textContent=desc;document.getElementById('overlay').classList.add('show');}
+function showPopImg(title,name,imgUrl,desc,col='var(--gold)'){document.getElementById('popT').textContent=title;document.getElementById('popT').style.color=col;document.getElementById('popI').innerHTML=`<img src="${imgUrl}" alt="" class="pop-img">`;document.getElementById('popD').textContent=name+'\n'+desc;document.getElementById('overlay').classList.add('show');}
+function slotIcon(slot){return({head:'👤',hands:'🧤',belt:'🔪',weapon:'🔫'})[slot]||'📦';}
 function closePopup(){document.getElementById('overlay').classList.remove('show');}
 function goScreen(name,btn){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+name).classList.add('active');document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');document.getElementById('mainContent').scrollTop=0;if(name==='profile')drawGraph();}
 function vib(p){if(navigator.vibrate)try{navigator.vibrate(p);}catch(e){}}
@@ -681,7 +732,7 @@ function doPrestige(){
   checkAch('a8',true);
   awardCase('diamond');
   log(`⭐ PRESTIGE ${G.prestige.count} ! Bonus XP permanent : +${Math.round(G.prestige.bonusPct*100)}%`,'gold');
-  showPop(`⭐ PRESTIGE ${G.prestige.count} !`,pItem.icon+' '+pItem.n,`${pItem.desc}\n+${Math.round(G.prestige.bonusPct*100)}% XP permanent\n💎 Caisse Dreams gagnée !`);
+  showPopImg(`⭐ PRESTIGE ${G.prestige.count} !`,pItem.n,SI(pItem.h),`${pItem.desc}\n+${Math.round(G.prestige.bonusPct*100)}% XP permanent\n💎 Caisse Dreams gagnée !`);
   vib([100,50,100,50,300]);
   save();render();
 }
@@ -689,13 +740,12 @@ function doPrestige(){
 // CRAFT
 const RARITY_ORDER=['common','rare','epic','legendary'];
 function canCraft(rarity){
-  const count=G.inventory.filter(i=>i.r===rarity&&i.slot!=='consumable').length;
+  const count=G.inventory.filter(i=>i.r===rarity).length;
   return count>=3;
 }
 function doCraft(rarity){
   if(!canCraft(rarity))return;
-  // remove 3 items of that rarity (non-consumable)
-  const pool=G.inventory.filter(i=>i.r===rarity&&i.slot!=='consumable');
+  const pool=G.inventory.filter(i=>i.r===rarity);
   const toRemove=pool.slice(0,3).map(i=>i.uid);
   G.inventory=G.inventory.filter(i=>!toRemove.includes(i.uid));
   // create one of next rarity from appropriate case pool
@@ -708,8 +758,8 @@ function doCraft(rarity){
   G.stats.crafted++;
   G.season.xp+=2;checkSeasonTiers();
   checkAch('a10',nextRarity==='epic'||nextRarity==='legendary');
-  log(`🔮 Craft : 3× ${rarity} → ${crafted.icon} ${crafted.n} [${nextRarity.toUpperCase()}] !`,'ach');
-  showPop('🔮 CRAFT !',crafted.icon+' '+crafted.n,`3× ${rarity} fusionnés\n${crafted.desc}`,'var(--purple)');
+  log(`🔮 Craft : 3× ${rarity} → ${slotIcon(crafted.slot)} ${crafted.n} [${nextRarity.toUpperCase()}] !`,'ach');
+  showPopImg('🔮 CRAFT !',crafted.n,SI(crafted.h),`3× ${rarity} fusionnés\n${crafted.desc}`,'var(--purple)');
   vib([40,20,80]);
   checkQuests();save();render();
 }
@@ -785,7 +835,7 @@ function checkAch(id,cond){const a=G.achs.find(x=>x.id===id);if(!a||a.unlocked)r
 function checkQuests(){G.quests.forEach(q=>{if(q.done)return;let v=0;if(q.stat==='totalExo')v=G.stats.totalExo;else if(q.stat==='sessions')v=G.sessions;else if(q.stat==='casesOpened')v=G.stats.casesOpened||0;else if(q.stat==='swingT')v=G.stats.swingT;else if(q.stat==='crafted')v=G.stats.crafted||0;else if(q.stat==='bossK')v=G.stats.bossK||0;else if(q.stat==='streak')v=G.streak||0;else if(q.stat==='dailyDone')v=G.stats.dailyDone||0;if(v>=q.t){q.done=true;G.xp+=q.r;G.season.xp+=3;log(`✅ QUÊTE : ${q.n} +${q.r} XP`,'gold');}});}
 
 // EQUIP
-function equipItem(uid){const idx=G.inventory.findIndex(i=>i.uid===uid);if(idx<0)return;const item=G.inventory[idx];if(item.slot==='consumable'){if(item.bonus.xp){G.xp+=item.bonus.xp;floatXP(item.bonus.xp);}if(item.bonus.str)G.str=Math.min(200,G.str+item.bonus.str);if(item.bonus.end)G.end=Math.min(200,G.end+item.bonus.end);G.inventory.splice(idx,1);log(`✨ ${item.n} : ${item.desc}`,'good');vib(60);}else{if(G.equipped[item.slot])G.inventory.push(G.equipped[item.slot]);G.equipped[item.slot]=item;G.inventory.splice(G.inventory.findIndex(i=>i.uid===uid),1);log(`🔧 ${item.n} équipé`,'good');checkAch('a5',Object.values(G.equipped).filter(Boolean).length>=4);vib(40);}save();render();}
+function equipItem(uid){const idx=G.inventory.findIndex(i=>i.uid===uid);if(idx<0)return;const item=G.inventory[idx];if(G.equipped[item.slot])G.inventory.push(G.equipped[item.slot]);G.equipped[item.slot]=item;G.inventory.splice(G.inventory.findIndex(i=>i.uid===uid),1);log(`🔧 ${item.n} équipé`,'good');checkAch('a5',Object.values(G.equipped).filter(Boolean).length>=4);vib(40);save();render();}
 function unequipSlot(slot){if(!G.equipped[slot])return;G.inventory.push(G.equipped[slot]);G.equipped[slot]=null;save();render();vib(30);}
 function newDay(){G.setsToday={};G.stats.dmgSess=0;const rec=Math.round(G.fatigue*.5);G.fatigue=Math.max(0,G.fatigue-rec);if(rec>0)log(`😴 Repos : -${rec} fatigue`,'good');else log('Nouveau jour !','gold');getDailyChallenges();if(G.dailies.dailyStats)Object.keys(G.dailies.dailyStats).forEach(k=>G.dailies.dailyStats[k]=0);save();render();vib(30);}
 function resetGame(){if(!confirm('Tout effacer ?'))return;localStorage.removeItem('fqv4');G=fresh();document.getElementById('logArea').innerHTML='<div class="lg gold">» Nouvelle partie !</div>';save();render();}
@@ -826,7 +876,7 @@ function startSpin(){
   document.getElementById('rouWrap').style.display='block';
   const track=document.getElementById('rouTrack');track.innerHTML='';
   const TOTAL=60,RES_POS=52,ITEM_W=84+6;
-  for(let i=0;i<TOTAL;i++){const item=i===RES_POS?pendingResult:wPick(ct.pool,ct.w);const div=document.createElement('div');div.className=`ri ${item.r||'common'}`;if(i===RES_POS)div.id='rouResItem';div.innerHTML=`<div class="ri-ic">${item.icon}</div><div class="ri-nm">${item.n}</div>`;track.appendChild(div);}
+  for(let i=0;i<TOTAL;i++){const item=i===RES_POS?pendingResult:wPick(ct.pool,ct.w);const div=document.createElement('div');div.className=`ri ${item.r||'common'}`;if(i===RES_POS)div.id='rouResItem';div.innerHTML=`<div class="ri-ic"><img src="${SI(item.h)}" alt="" loading="lazy"></div><div class="ri-nm">${item.n}</div>`;track.appendChild(div);}
   track.style.transition='none';track.style.transform='translateX(0)';
   const vp=document.getElementById('rouVp');const vpW=vp.offsetWidth||window.innerWidth-40;const centerOff=vpW/2-ITEM_W/2;const targetX=-(RES_POS*ITEM_W-centerOff);
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
@@ -851,14 +901,14 @@ function revealResult(){
   setTimeout(()=>{
     document.getElementById('rouWrap').style.display='none';
     document.getElementById('coResult').className=`co-result show ${item.r}`;
-    document.getElementById('coResIcon').textContent=item.icon;
+    document.getElementById('coResIcon').innerHTML=`<img src="${SI(item.h)}" alt="">`;
     document.getElementById('coResName').textContent=item.n;document.getElementById('coResName').style.color=col;
     document.getElementById('coResRarity').textContent=item.r.toUpperCase();document.getElementById('coResRarity').style.color=col;
     document.getElementById('coResDesc').textContent=item.desc;
     document.getElementById('coCaseIcon').style.display='none';
     document.getElementById('coMainBtn').textContent='PRENDRE ►';document.getElementById('coMainBtn').disabled=false;
   },400);
-  log(`📦 ${item.icon} ${item.n} [${item.r.toUpperCase()}]`,'cl');
+  log(`📦 ${slotIcon(item.slot)} ${item.n} [${item.r.toUpperCase()}]`,'cl');
   if(item.r==='legendary')vib([200,100,200,100,400]);
   else if(item.r==='epic')vib([100,50,200]);
   else vib([60,30,100]);
@@ -1010,25 +1060,25 @@ function render(){
   if(!hasAny){cg.innerHTML='<div class="no-cases">Aucune caisse.<br><b style="color:var(--gold)">Fais des séries pour en gagner !</b></div>';}
 
   // EQUIP
-  const slots=['head','chest','hands','belt','weapon'];
-  const sdef={head:{ic:'👤',nm:'Agent'},chest:{ic:'🏷',nm:'Patch'},hands:{ic:'🧤',nm:'Gants'},belt:{ic:'🔪',nm:'Couteau'},weapon:{ic:'🔫',nm:'Arme'}};
+  const slots=['head','hands','belt','weapon'];
+  const sdef={head:{ic:'👤',nm:'Agent'},hands:{ic:'🧤',nm:'Gants'},belt:{ic:'🔪',nm:'Couteau'},weapon:{ic:'🔫',nm:'Arme'}};
   const eqg=document.getElementById('equipGrid');eqg.innerHTML='';
-  slots.forEach(s=>{const it=G.equipped[s];const d=document.createElement('div');d.className='eq-slot'+(it?' '+it.r:'');d.innerHTML=it?`<div class="eq-ic">${it.icon}</div><div class="eq-nm" style="color:var(--text)">${it.n}</div><div class="eq-bn">${it.desc}</div>`:`<div class="eq-ic" style="opacity:.2;font-size:18px">${sdef[s].ic}</div><div class="eq-nm">${sdef[s].nm}</div>`;if(it)d.onclick=()=>unequipSlot(s);eqg.appendChild(d);});
+  slots.forEach(s=>{const it=G.equipped[s];const d=document.createElement('div');d.className='eq-slot'+(it?' '+it.r:'');d.innerHTML=it?`<div class="eq-ic"><img src="${SI(it.h)}" alt="" loading="lazy"></div><div class="eq-nm" style="color:var(--text)">${it.n}</div><div class="eq-bn">${it.desc}</div>`:`<div class="eq-ic eq-empty">${sdef[s].ic}</div><div class="eq-nm">${sdef[s].nm}</div>`;if(it)d.onclick=()=>unequipSlot(s);eqg.appendChild(d);});
   const m=xpMult();document.getElementById('xpMultTxt').textContent='×'+m.toFixed(2);document.getElementById('xpMultTxt').style.color=m>1?'var(--green)':'var(--muted)';
 
   // INVENTORY
   const invel=document.getElementById('invGrid');invel.innerHTML='';document.getElementById('invCnt').textContent=G.inventory.length;
   if(!G.inventory.length){invel.innerHTML='<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:14px 0">Ouvre des caisses !</div>';}
-  G.inventory.forEach(it=>{const d=document.createElement('div');d.className='iv '+it.r;d.innerHTML=`<div class="iv-ic">${it.icon}</div><div class="iv-nm">${it.n}</div><div class="iv-bn">${it.desc}</div>`;d.onclick=()=>equipItem(it.uid);invel.appendChild(d);});
+  G.inventory.forEach(it=>{const d=document.createElement('div');d.className='iv '+it.r;d.innerHTML=`<div class="iv-ic"><img src="${SI(it.h)}" alt="" loading="lazy"></div><div class="iv-nm">${it.n}</div><div class="iv-bn">${it.desc}</div>`;d.onclick=()=>equipItem(it.uid);invel.appendChild(d);});
 
   // CRAFT
   const cl=document.getElementById('craftList');cl.innerHTML='';
   ['common','rare','epic'].forEach(r=>{
-    const count=G.inventory.filter(i=>i.r===r&&i.slot!=='consumable').length;
+    const count=G.inventory.filter(i=>i.r===r).length;
     const nextR=RARITY_ORDER[RARITY_ORDER.indexOf(r)+1];
     const rcols={common:'#5555a0',rare:'var(--purple)',epic:'var(--orange)'};
     const div=document.createElement('div');div.className='craft-row';
-    div.innerHTML=`<div class="craft-info"><div class="craft-name" style="color:${rcols[r]||'var(--text)'}">3× ${r.toUpperCase()} → 1× ${(nextR||'').toUpperCase()}</div><div class="craft-desc">Tu as ${count} item${count>1?'s':''} ${r} (hors consommables)</div></div><button class="craft-btn" ${count<3?'disabled':''} onclick="doCraft('${r}')">FUSIONNER</button>`;
+    div.innerHTML=`<div class="craft-info"><div class="craft-name" style="color:${rcols[r]||'var(--text)'}">3× ${r.toUpperCase()} → 1× ${(nextR||'').toUpperCase()}</div><div class="craft-desc">Tu as ${count} item${count>1?'s':''} ${r}</div></div><button class="craft-btn" ${count<3?'disabled':''} onclick="doCraft('${r}')">FUSIONNER</button>`;
     cl.appendChild(div);
   });
 
