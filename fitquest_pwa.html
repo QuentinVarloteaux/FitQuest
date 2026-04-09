@@ -310,11 +310,11 @@ body{font-family:'Share Tech Mono',monospace;color:var(--text);display:flex;flex
     <div class="card">
       <div class="sec" style="margin-bottom:8px">Comment gagner</div>
       <div style="font-size:12px;color:var(--muted);line-height:2.2">
-        📦 <b style="color:#cd7f32">Bronze</b> — 1ère série du jour<br>
-        🪙 <b style="color:#c0c0c0">Argent</b> — 3 exos différents<br>
-        🎁 <b style="color:var(--gold)">Or</b> — 5 exos différents<br>
-        🔥 <b style="color:var(--orange)">Quotidienne</b> — Défi journalier terminé<br>
-        💎 <b style="color:var(--purple)">Diamant</b> — Level up · Boss · Prestige
+        📦 <b style="color:#cd7f32">Recrue</b> — 1ère série du jour<br>
+        🪙 <b style="color:#c0c0c0">Chroma</b> — 3 exos différents<br>
+        🎁 <b style="color:var(--gold)">Prisma</b> — 5 exos différents<br>
+        🔥 <b style="color:var(--orange)">Opération</b> — Défi journalier terminé<br>
+        💎 <b style="color:var(--purple)">Dreams & Nightmares</b> — Level up · Boss · Prestige
       </div>
     </div>
   </div>
@@ -681,7 +681,7 @@ function doPrestige(){
   checkAch('a8',true);
   awardCase('diamond');
   log(`⭐ PRESTIGE ${G.prestige.count} ! Bonus XP permanent : +${Math.round(G.prestige.bonusPct*100)}%`,'gold');
-  showPop(`⭐ PRESTIGE ${G.prestige.count} !`,pItem.icon+' '+pItem.n,`${pItem.desc}\n+${Math.round(G.prestige.bonusPct*100)}% XP permanent\n💎 Caisse Diamant gagnée !`);
+  showPop(`⭐ PRESTIGE ${G.prestige.count} !`,pItem.icon+' '+pItem.n,`${pItem.desc}\n+${Math.round(G.prestige.bonusPct*100)}% XP permanent\n💎 Caisse Dreams gagnée !`);
   vib([100,50,100,50,300]);
   save();render();
 }
@@ -758,7 +758,7 @@ function doExo(e,el){
   updateDailyStats();
   // level up
   const newLvl=getLvl(G.xp).l;
-  if(newLvl>oldLvl){const lv=getLvl(G.xp);G.str=Math.min(200,G.str+8);G.end=Math.min(200,G.end+8);log(`⬆ LEVEL UP ! Niveau ${newLvl} · ${lv.n}`,'lvl');awardCase('diamond',el);G.season.xp+=5;checkSeasonTiers(el);setTimeout(()=>showPop(`NIVEAU ${newLvl} !`,lv.n,'+8 Force · +8 Endurance\n💎 Caisse Diamant gagnée !'),400);vib([50,30,50,30,50,30,200]);checkAch('a6',newLvl>=8);}
+  if(newLvl>oldLvl){const lv=getLvl(G.xp);G.str=Math.min(200,G.str+8);G.end=Math.min(200,G.end+8);log(`⬆ LEVEL UP ! Niveau ${newLvl} · ${lv.n}`,'lvl');awardCase('diamond',el);G.season.xp+=5;checkSeasonTiers(el);setTimeout(()=>showPop(`NIVEAU ${newLvl} !`,lv.n,'+8 Force · +8 Endurance\n💎 Caisse Dreams gagnée !'),400);vib([50,30,50,30,50,30,200]);checkAch('a6',newLvl>=8);}
   // weekly history snapshot
   updateWeekHistory();
   checkAch('a1',new Date().getHours()<8);checkAch('a3',G.fatigue>=80);checkAch('a4',(G.stats.dmgSess||0)>=200);checkAch('a7',Object.values(G.setsToday).reduce((a,b)=>a+b,0)>=15);
@@ -776,8 +776,8 @@ function bossKill(el){
   const b=BOSSES[Math.min(G.boss.idx,BOSSES.length-1)];G.boss.dead=true;G.stats.bossK=(G.stats.bossK||0)+1;
   const bonXP=Math.round(b.maxHp*.3);G.xp+=bonXP;G.season.xp+=10;checkSeasonTiers(el);
   awardCase('gold',el);awardCase('gold',el);awardCase('diamond',el);
-  log(`🏆 BOSS VAINCU ! ${b.n} · +${bonXP} XP · 2× Or + 1× Diamant !`,'gold');
-  setTimeout(()=>showPop('🏆 BOSS VAINCU !',b.icon+' '+b.n,`+${bonXP} XP\n+2 Caisses Or 🎁\n+1 Caisse Diamant 💎`),300);
+  log(`🏆 BOSS VAINCU ! ${b.n} · +${bonXP} XP · 2× Prisma + 1× Dreams !`,'gold');
+  setTimeout(()=>showPop('🏆 BOSS VAINCU !',b.icon+' '+b.n,`+${bonXP} XP\n+2 Caisses Prisma 🎁\n+1 Caisse Dreams 💎`),300);
   vib([100,50,100,50,300]);checkQuests();
 }
 
@@ -1071,7 +1071,7 @@ function renderBoss(){
   if(G.boss.dead){bc.innerHTML=`<div style="text-align:center;padding:6px"><div style="font-size:33px;margin-bottom:4px">✨</div><div class="px" style="font-size:11px;color:var(--green)">BOSS VAINCU</div><div style="font-size:12px;color:var(--muted);margin-top:3px">Nouveau boss dimanche</div></div>`;return;}
   const b=BOSSES[Math.min(G.boss.idx,BOSSES.length-1)];const pct=Math.round(G.boss.hp/G.boss.maxHp*100);
   bc.className='card boss-card';
-  bc.innerHTML=`<div class="boss-row"><div class="boss-em">${b.icon}</div><div><div class="boss-t">⚔ ${b.n}</div><div class="boss-s">Chaque série = dégâts · Vaincre = 2× Or + 1× Diamant</div></div></div><div class="boss-hp"><div class="boss-hf" style="width:${pct}%"></div></div><div class="boss-ft"><span style="color:var(--red)">${G.boss.hp}/${G.boss.maxHp} HP</span><span>${pct}% restant</span></div>`;
+  bc.innerHTML=`<div class="boss-row"><div class="boss-em">${b.icon}</div><div><div class="boss-t">⚔ ${b.n}</div><div class="boss-s">Chaque série = dégâts · Vaincre = 2× Prisma + 1× Dreams</div></div></div><div class="boss-hp"><div class="boss-hf" style="width:${pct}%"></div></div><div class="boss-ft"><span style="color:var(--red)">${G.boss.hp}/${G.boss.maxHp} HP</span><span>${pct}% restant</span></div>`;
 }
 
 // PWA
