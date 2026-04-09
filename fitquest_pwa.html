@@ -204,8 +204,6 @@ body{font-family:'Share Tech Mono',monospace;color:var(--text);display:flex;flex
 .btn-rst{width:100%;padding:10px;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--muted);font-family:'Share Tech Mono',monospace;font-size:13px;cursor:pointer;margin-top:6px;}
 .btn-rst:active{border-color:var(--red);color:var(--red);}
 .btn-notif{width:100%;padding:10px;background:rgba(79,195,247,.07);border:1px solid rgba(79,195,247,.3);border-radius:10px;color:var(--blue);font-family:'Share Tech Mono',monospace;font-size:13px;cursor:pointer;margin-top:6px;}
-.install-banner{background:rgba(245,200,66,.07);border:1px solid rgba(245,200,66,.25);border-radius:10px;padding:12px;margin-bottom:10px;font-size:13px;line-height:1.7;color:var(--text);}
-.install-banner b{color:var(--gold);}
 .divider{height:1px;background:var(--border);margin:12px 0;}
 </style>
 </head>
@@ -224,7 +222,6 @@ body{font-family:'Share Tech Mono',monospace;color:var(--text);display:flex;flex
 
   <!-- COMBAT -->
   <div class="screen active" id="screen-home">
-    <div class="install-banner" id="installBanner" style="display:none"><b>📲</b> Safari → <b>□ Partager</b> → <b>"Sur l'écran d'accueil"</b></div>
     <div id="bossCard" class="card boss-card"></div>
     <div class="card">
       <div class="sec">Personnage</div>
@@ -1126,10 +1123,6 @@ function renderBoss(){
 
 // PWA
 window.addEventListener('load',()=>{
-  try{
-    const sa=window.navigator.standalone||(window.matchMedia&&window.matchMedia('(display-mode:standalone)').matches);
-    if(!sa){const ib=document.getElementById('installBanner');if(ib)ib.style.display='block';}
-  }catch(e){}
   try{
     if(notifSupported()&&Notification.permission==='granted'){document.getElementById('notifBtn').textContent='✓ Notifications activées';scheduleNotifCheck();}
   }catch(e){}
