@@ -546,7 +546,7 @@ function fresh(){
 let G=loadG();
 function loadG(){
   try{
-    const s=localStorage.getItem('fqv4');
+    const s=typeof localStorage!=='undefined'?localStorage.getItem('fqv4'):null;
     if(!s)return fresh();
     const d=JSON.parse(s);
     if(!d.cases)d.cases={bronze:0,silver:0,gold:0,diamond:0,daily:0};
@@ -564,7 +564,7 @@ function loadG(){
     return d;
   }catch(e){return fresh();}
 }
-function save(){localStorage.setItem('fqv4',JSON.stringify(G));}
+function save(){try{localStorage.setItem('fqv4',JSON.stringify(G));}catch(e){console.warn('save failed',e);}}
 
 // HELPERS
 function getLvl(xp){let c=LEVELS[0];for(const l of LEVELS)if(xp>=l.xp)c=l;return c;}
@@ -886,31 +886,39 @@ function drawGraph(){
 }
 
 // NOTIFICATIONS
+function notifSupported(){return typeof window!=='undefined'&&'Notification' in window;}
 async function requestNotif(){
-  if(!('Notification' in window)){document.getElementById('notifStatus').textContent='Non supporté sur cet appareil';return;}
-  const perm=await Notification.requestPermission();
-  if(perm==='granted'){document.getElementById('notifBtn').textContent='✓ Notifications activées';document.getElementById('notifStatus').textContent='Tu recevras des rappels si tu oublies de t\'entraîner.';scheduleNotifCheck();vib([50,30,80]);}
-  else{document.getElementById('notifStatus').textContent='Permission refusée — active dans Réglages iPhone';}
+  if(!notifSupported()){document.getElementById('notifStatus').textContent='Non supporté sur cet appareil';return;}
+  try{
+    const perm=await Notification.requestPermission();
+    if(perm==='granted'){document.getElementById('notifBtn').textContent='✓ Notifications activées';document.getElementById('notifStatus').textContent='Tu recevras des rappels si tu oublies de t\'entraîner.';scheduleNotifCheck();vib([50,30,80]);}
+    else{document.getElementById('notifStatus').textContent='Permission refusée — active dans Réglages iPhone';}
+  }catch(e){document.getElementById('notifStatus').textContent='Notifications indisponibles ici';}
 }
 function scheduleNotifCheck(){
+  if(!notifSupported())return;
   // Check every hour if user hasn't trained today
   const check=()=>{
-    if(Notification.permission!=='granted')return;
-    const today=new Date().toDateString();
-    const hour=new Date().getHours();
-    if(hour>=19&&G.lastDay!==today){
-      new Notification('⚔ FitQuest — Ton streak est en danger !',{body:`Tu n'as pas encore fait de séance aujourd'hui. ${G.streak>0?'Streak actif : '+G.streak+' jours 🔥':''}`,icon:'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><text y=\'.9em\' font-size=\'90\'>⚔</text></svg>'});
-    }
-    if(!G.boss.dead&&hour===9){new Notification('⚔ FitQuest — Boss actif !',{body:`${BOSSES[Math.min(G.boss.idx,BOSSES.length-1)].n} attend ta séance. ${G.boss.hp} HP restants.`});}
+    try{
+      if(Notification.permission!=='granted')return;
+      const today=new Date().toDateString();
+      const hour=new Date().getHours();
+      if(hour>=19&&G.lastDay!==today){
+        new Notification('⚔ FitQuest — Ton streak est en danger !',{body:`Tu n'as pas encore fait de séance aujourd'hui. ${G.streak>0?'Streak actif : '+G.streak+' jours 🔥':''}`,icon:'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><text y=\'.9em\' font-size=\'90\'>⚔</text></svg>'});
+      }
+      if(!G.boss.dead&&hour===9){new Notification('⚔ FitQuest — Boss actif !',{body:`${BOSSES[Math.min(G.boss.idx,BOSSES.length-1)].n} attend ta séance. ${G.boss.hp} HP restants.`});}
+    }catch(e){}
   };
   setInterval(check,3600000);
   check();
 }
 
 // SAVE/RESTORE
-function exportSave(){try{const code=btoa(unescape(encodeURIComponent(JSON.stringify(G))));if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(()=>showSaveMsg('✓ Copié !','var(--green)')).catch(()=>fallbackCopy(code));}else fallbackCopy(code);}catch(e){showSaveMsg('Erreur','var(--red)');}}
+function utf8ToB64(str){try{return btoa(unescape(encodeURIComponent(str)));}catch(e){return btoa(encodeURIComponent(str));}}
+function b64ToUtf8(str){try{return decodeURIComponent(escape(atob(str)));}catch(e){return decodeURIComponent(atob(str));}}
+function exportSave(){try{const code=utf8ToB64(JSON.stringify(G));if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(()=>showSaveMsg('✓ Copié !','var(--green)')).catch(()=>fallbackCopy(code));}else fallbackCopy(code);}catch(e){showSaveMsg('Erreur','var(--red)');}}
 function fallbackCopy(code){const ta=document.getElementById('importArea');ta.value=code;ta.select();try{document.execCommand('copy');showSaveMsg('✓ Copié !','var(--green)');}catch(e){showSaveMsg('Sélectionne et copie manuellement','var(--orange)');}}
-function importSave(){const raw=document.getElementById('importArea').value.trim();if(!raw){showSaveMsg('Colle un code d\'abord','var(--orange)');return;}try{const d=JSON.parse(decodeURIComponent(escape(atob(raw))));if(typeof d.xp==='undefined')throw new Error();G=d;save();render();document.getElementById('importArea').value='';showSaveMsg('✓ Restauré !','var(--green)');vib([50,30,100]);}catch(e){showSaveMsg('Code invalide','var(--red)');}}
+function importSave(){const raw=document.getElementById('importArea').value.trim();if(!raw){showSaveMsg('Colle un code d\'abord','var(--orange)');return;}try{const d=JSON.parse(b64ToUtf8(raw));if(typeof d.xp==='undefined')throw new Error();G=d;save();render();document.getElementById('importArea').value='';showSaveMsg('✓ Restauré !','var(--green)');vib([50,30,100]);}catch(e){showSaveMsg('Code invalide','var(--red)');}}
 function showSaveMsg(msg,col){const el=document.getElementById('saveMsg');if(!el)return;el.textContent=msg;el.style.color=col;setTimeout(()=>{if(el)el.textContent='';},3000);}
 
 // RENDER
@@ -997,7 +1005,7 @@ function render(){
   ['common','rare','epic'].forEach(r=>{
     const count=G.inventory.filter(i=>i.r===r&&i.slot!=='consumable').length;
     const nextR=RARITY_ORDER[RARITY_ORDER.indexOf(r)+1];
-    const rcols={common:'#5555a0',rare:var_purple(),epic:'var(--orange)'};
+    const rcols={common:'#5555a0',rare:'var(--purple)',epic:'var(--orange)'};
     const div=document.createElement('div');div.className='craft-row';
     div.innerHTML=`<div class="craft-info"><div class="craft-name" style="color:${rcols[r]||'var(--text)'}">3× ${r.toUpperCase()} → 1× ${(nextR||'').toUpperCase()}</div><div class="craft-desc">Tu as ${count} item${count>1?'s':''} ${r} (hors consommables)</div></div><button class="craft-btn" ${count<3?'disabled':''} onclick="doCraft('${r}')">FUSIONNER</button>`;
     cl.appendChild(div);
@@ -1037,8 +1045,6 @@ function render(){
   document.getElementById('prestigeBonus').textContent=G.prestige.count>0?`Bonus XP permanent : +${Math.round(G.prestige.bonusPct*100)}% · ${'⭐'.repeat(G.prestige.count)}`:'';
 }
 
-function var_purple(){return 'var(--purple)';}
-
 function renderBoss(){
   const bc=document.getElementById('bossCard');
   if(G.boss.dead){bc.innerHTML=`<div style="text-align:center;padding:6px"><div style="font-size:26px;margin-bottom:4px">✨</div><div class="px" style="font-size:8px;color:var(--green)">BOSS VAINCU</div><div style="font-size:9px;color:var(--muted);margin-top:3px">Nouveau boss dimanche</div></div>`;return;}
@@ -1049,15 +1055,24 @@ function renderBoss(){
 
 // PWA
 window.addEventListener('load',()=>{
-  const sa=window.navigator.standalone||window.matchMedia('(display-mode:standalone)').matches;
-  if(!sa)document.getElementById('installBanner').style.display='block';
-  if(Notification.permission==='granted'){document.getElementById('notifBtn').textContent='✓ Notifications activées';scheduleNotifCheck();}
-  if('serviceWorker' in navigator){const sw=`const C='fq4v';self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.add(location.href))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));`;navigator.serviceWorker.register(URL.createObjectURL(new Blob([sw],{type:'application/javascript'}))).catch(()=>{});}
+  try{
+    const sa=window.navigator.standalone||(window.matchMedia&&window.matchMedia('(display-mode:standalone)').matches);
+    if(!sa){const ib=document.getElementById('installBanner');if(ib)ib.style.display='block';}
+  }catch(e){}
+  try{
+    if(notifSupported()&&Notification.permission==='granted'){document.getElementById('notifBtn').textContent='✓ Notifications activées';scheduleNotifCheck();}
+  }catch(e){}
+  try{
+    if('serviceWorker' in navigator&&location.protocol!=='file:'){
+      const sw=`const C='fq4v';self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.add(location.href))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));`;
+      navigator.serviceWorker.register(URL.createObjectURL(new Blob([sw],{type:'application/javascript'}))).catch(()=>{});
+    }
+  }catch(e){}
 });
 
-getDailyChallenges();
-render();
-log('v4 : Défis quotidiens · Craft · Saison · Prestige · Notifications · Graphique');
+window.addEventListener('error',e=>{try{console.error('fq4 error',e.message,e.filename,e.lineno,e.error);}catch(_){}});
+window.addEventListener('unhandledrejection',e=>{try{console.error('fq4 rejection',e.reason);}catch(_){}});
+try{getDailyChallenges();render();log('v4 : Défis quotidiens · Craft · Saison · Prestige · Notifications · Graphique');}catch(e){console.error('init failed',e);log('Erreur init : '+e.message,'cl');}
 </script>
 </body>
 </html>
