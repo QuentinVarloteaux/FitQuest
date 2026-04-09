@@ -1011,9 +1011,9 @@ function render(){
 
   // EQUIP
   const slots=['head','chest','hands','belt','weapon'];
-  const sdef={head:'🪖 Tête',chest:'🧥 Torse',hands:'🧤 Mains',belt:'⬛ Ceinture',weapon:'⚔ Arme'};
+  const sdef={head:{ic:'👤',nm:'Agent'},chest:{ic:'🏷',nm:'Patch'},hands:{ic:'🧤',nm:'Gants'},belt:{ic:'🔪',nm:'Couteau'},weapon:{ic:'🔫',nm:'Arme'}};
   const eqg=document.getElementById('equipGrid');eqg.innerHTML='';
-  slots.forEach(s=>{const it=G.equipped[s];const d=document.createElement('div');d.className='eq-slot'+(it?' '+it.r:'');d.innerHTML=it?`<div class="eq-ic">${it.icon}</div><div class="eq-nm" style="color:var(--text)">${it.n}</div><div class="eq-bn">${it.desc}</div>`:`<div class="eq-ic" style="opacity:.2;font-size:18px">${sdef[s].split(' ')[0]}</div><div class="eq-nm">${sdef[s].split(' ')[1]}</div>`;if(it)d.onclick=()=>unequipSlot(s);eqg.appendChild(d);});
+  slots.forEach(s=>{const it=G.equipped[s];const d=document.createElement('div');d.className='eq-slot'+(it?' '+it.r:'');d.innerHTML=it?`<div class="eq-ic">${it.icon}</div><div class="eq-nm" style="color:var(--text)">${it.n}</div><div class="eq-bn">${it.desc}</div>`:`<div class="eq-ic" style="opacity:.2;font-size:18px">${sdef[s].ic}</div><div class="eq-nm">${sdef[s].nm}</div>`;if(it)d.onclick=()=>unequipSlot(s);eqg.appendChild(d);});
   const m=xpMult();document.getElementById('xpMultTxt').textContent='×'+m.toFixed(2);document.getElementById('xpMultTxt').style.color=m>1?'var(--green)':'var(--muted)';
 
   // INVENTORY
